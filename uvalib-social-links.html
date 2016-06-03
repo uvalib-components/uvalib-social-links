@@ -1,0 +1,126 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../polymer-font-awesome-icons/fa-brand.html">
+<link rel="import" href="../paper-icon-button/paper-icon-button.html">
+
+<!--
+An element providing a Library Twitter Link.
+
+Example:
+
+    <uvalib-twitter-link></uvalib-twitter-link>
+
+@element uvalib-twitter-link
+@demo demo/index.html
+@hero hero.svg
+-->
+
+<dom-module id="uvalib-twitter-link">
+  <template>
+    <style>
+      :host {
+        display: block;
+        box-sizing: border-box;
+        height: 50px;
+        width: 50px;
+      }
+      a {
+        color: var(--specialcolor,currentcolor);
+      }
+      paper-icon-button {
+        height:100%;
+        width:100%;
+        color: var(--specialcolor,currentcolor);
+      }
+    </style>
+
+    <a target="_blank" href="https://twitter.com/UVaLibrary" tabindex="-1">
+      <paper-icon-button icon="fa-brand:twitter-square" alt="UVa Library Twitter"></paper-icon-button>
+    </a>
+
+  </template>
+  <script>
+    Polymer({is: 'uvalib-twitter-link'});
+  </script>
+</dom-module>
+
+<!--
+An element providing a Library Facebook Link.
+
+Example:
+
+    <uvalib-facebook-link></uvalib-facebook-link>
+
+@element uvalib-facebook-link
+@demo demo/index.html
+@hero hero.svg
+-->
+
+<dom-module id="uvalib-facebook-link">
+  <template>
+    <style>
+      :host {
+        display: block;
+        box-sizing: border-box;
+        height: 50px;
+        width: 50px;
+      }
+      a {
+        color: var(--specialcolor,currentcolor);
+      }
+      paper-icon-button {
+        height:100%;
+        width:100%;
+        color: var(--specialcolor,currentcolor);
+      }
+    </style>
+
+    <a target="_blank" href="https://www.facebook.com/University-of-Virginia-Library-136530559704906/" tabindex="-1">
+      <paper-icon-button icon="fa-brand:facebook-square" alt="UVa Library Facebook"></paper-icon-button>
+    </a>
+
+  </template>
+  <script>
+    Polymer({is: 'uvalib-facebook-link'});
+  </script>
+</dom-module>
+
+<!--
+An element providing a Library Instagram Link.
+
+Example:
+
+    <uvalib-instagram-link></uvalib-instagram-link>
+
+@element uvalib-instagram-link
+@demo demo/index.html
+@hero hero.svg
+-->
+
+<dom-module id="uvalib-instagram-link">
+  <template>
+    <style>
+      :host {
+        display: block;
+        box-sizing: border-box;
+        height: 50px;
+        width: 50px;
+      }
+      a {
+        color: var(--specialcolor,currentcolor);
+      }
+      paper-icon-button {
+        height:100%;
+        width:100%;
+        color: var(--specialcolor,currentcolor);
+      }
+    </style>
+
+    <a target="_blank" href="https://www.instagram.com/uvalibrary/" tabindex="-1">
+      <paper-icon-button icon="fa-brand:instagram" alt="UVa Library Instagram"></paper-icon-button>
+    </a>
+
+  </template>
+  <script>
+    Polymer({is: 'uvalib-instagram-link'});
+  </script>
+</dom-module>
