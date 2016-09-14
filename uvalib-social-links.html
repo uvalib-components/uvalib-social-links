@@ -1,6 +1,7 @@
 <link rel="import" href="../polymer/polymer.html">
-<link rel="import" href="../polymer-font-awesome-icons/fa-brand.html">
 <link rel="import" href="../paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../uvalib-theme/uvalib-icons.html">
+<link rel="import" href="../uvalib-theme/uvalib-theme.html">
 
 <!--
 An element providing a Library Twitter Link.
@@ -16,7 +17,7 @@ Example:
 
 <dom-module id="uvalib-twitter-link">
   <template>
-    <style>
+    <style is="custom-style" include="uvalib-theme">
       :host {
         display: block;
         box-sizing: border-box;
@@ -34,7 +35,7 @@ Example:
     </style>
 
     <a href="https://twitter.com/UVaLibrary" tabindex="-1">
-      <paper-icon-button icon="fa-brand:twitter-square" alt="UVA Library Twitter"></paper-icon-button>
+      <paper-icon-button icon="twitter-square" alt="UVA Library Twitter"></paper-icon-button>
     </a>
 
   </template>
@@ -57,7 +58,7 @@ Example:
 
 <dom-module id="uvalib-facebook-link">
   <template>
-    <style>
+    <style is="custom-style" include="uvalib-theme">
       :host {
         display: block;
         box-sizing: border-box;
@@ -75,7 +76,7 @@ Example:
     </style>
 
     <a href="https://www.facebook.com/University-of-Virginia-Library-136530559704906/" tabindex="-1">
-      <paper-icon-button icon="fa-brand:facebook-square" alt="UVa Library Facebook"></paper-icon-button>
+      <paper-icon-button icon="facebook-square" alt="UVa Library Facebook"></paper-icon-button>
     </a>
 
   </template>
@@ -98,7 +99,7 @@ Example:
 
 <dom-module id="uvalib-instagram-link">
   <template>
-    <style>
+    <style is="custom-style" include="uvalib-theme">
       :host {
         display: block;
         box-sizing: border-box;
@@ -116,7 +117,7 @@ Example:
     </style>
 
     <a href="https://www.instagram.com/uvalibrary/" tabindex="-1">
-      <paper-icon-button icon="fa-brand:instagram" alt="UVa Library Instagram"></paper-icon-button>
+      <paper-icon-button icon="instagram" alt="UVa Library Instagram"></paper-icon-button>
     </a>
 
   </template>

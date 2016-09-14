@@ -18,16 +18,13 @@
     "/test/"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.2.0",
-    "polymer-font-awesome-icons": "uvalib-components/font-awesome-polymer-icons#master",
-    "paper-icon-button": "^1.1.1"
+    "polymer": "polymer/polymer#^1.6.1",
+    "paper-icon-button": "^1.1.2",
+    "uvalib-theme": "uvalib-components/uvalib-theme#master"
   },
   "devDependencies": {
-    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
-    "web-component-tester": "^4.0.0",
-    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.2.3"
-  },
-  "resolutions": {
-    "polymer": "1.5.0"
+    "iron-component-page": "PolymerElements/iron-component-page#^1.1.7",
+    "web-component-tester": "^4.3.3",
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.2.5"
   }
 }
