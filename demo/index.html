@@ -13,11 +13,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
     <title>uvalib-social-links Demo</title>
-    <script src="../../webcomponentsjs/webcomponents-lite.min.js"></script>
-    <link rel="import" href="../uvalib-social-links.html">
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
     <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../../iron-flex-layout/iron-flex-layout.html">
+
+    <link rel="import" href="../uvalib-social-links.html">
+
+    <style is="custom-style" include="demo-pages-shared-styles">
+    </style>
   </head>
-  <body unresolved>
+  <body>
 
     <demo-snippet>
       <template>
@@ -40,6 +47,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <uvalib-instagram-link></uvalib-instagram-link>
         <uvalib-instagram-link style="color:yellow"></uvalib-instagram-link>
         <uvalib-instagram-link style="color:red; height:100px; width:100px"></uvalib-instagram-link>
+      </template>
+    </demo-snippet>
+
+    <demo-snippet>
+      <template>
+        <uvalib-pinterest-link></uvalib-pinterest-link>
+        <uvalib-pinterest-link style="color:yellow"></uvalib-pinterest-link>
+        <uvalib-pinterest-link style="color:red; height:100px; width:100px"></uvalib-pinterest-link>
+        <uvalib-pinterest-link style="color:blue" href="https://www.pinterest.com/explore/university-of-virginia/" alt="UVA Pinterest Explore Link"></uvalib-pinterest-link>
       </template>
     </demo-snippet>
 

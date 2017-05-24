@@ -26,5 +26,30 @@
     "iron-component-page": "PolymerElements/iron-component-page#^1.1.7",
     "web-component-tester": "^4.3.3",
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.2.5"
+  },
+  "resolutions": {
+    "web-component-tester": "^5.0.0",
+    "iron-icons": "^1.2.1",
+    "uvalib-theme": "0.0.5",
+    "polymer": "^1.7.1",
+    "uvalib-elements": "^0.0.3",
+    "uvalib-events-card": "0.0.1",
+    "uvalib-analytics": "0.0.1",
+    "uvalib-banner": "0.0.2",
+    "uvalib-card": "0.0.3",
+    "uvalib-header": "1.0.3",
+    "uvalib-helper-libs": "1.1.4",
+    "uvalib-footer": "0.1.0",
+    "uvalib-alerts": "58d0433b43",
+    "uvalib-logos": "0.0.1",
+    "uvalib-models": "0.0.3",
+    "uvalib-nav": "0.0.4",
+    "uvalib-hours-card": "0.0.1",
+    "uvalib-news-section": "0.0.2",
+    "uvalib-button": "0.0.2",
+    "uvalib-skip-nav": "0.0.1",
+    "uvalib-liame": "0.1.0",
+    "uvalib-search-box": "0.0.1",
+    "app-storage": "^0.9.8"
   }
 }
