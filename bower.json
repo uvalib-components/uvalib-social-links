@@ -50,6 +50,9 @@
     "uvalib-skip-nav": "0.0.1",
     "uvalib-liame": "0.1.0",
     "uvalib-search-box": "0.0.1",
-    "app-storage": "^0.9.8"
+    "app-storage": "^0.9.8",
+    "lodash": "^4.17.4",
+    "mocha": "^2.3.0",
+    "uvalib-social-links": "master"
   }
 }
