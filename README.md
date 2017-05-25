@@ -1,4 +1,5 @@
 # uvalib-social-links
+[![Build Status](https://travis-ci.org/uvalib-components/uvalib-social-links.svg?branch=master)](https://travis-ci.org/uvalib-components/uvalib-social-links)
 
 An element providing a starting point for your own reusable Polymer elements.
 

@@ -7,17 +7,17 @@ addons:
   sauce_connect: true
   apt:
     sources:
-      - google-chrome
+    - google-chrome
     packages:
-      - google-chrome-stable
+    - google-chrome-stable
 before_script:
-  - npm install -g bower polymer web-component-tester
-  - npm install -g gulp gulp-accessibility gulp-rename run-sequence
-  - bower install
+- npm install -g bower polymer web-component-tester
+- npm install -g gulp gulp-accessibility gulp-rename run-sequence
+- bower install
 script:
-  - xvfb-run wct --plugin sauce
-  - xvfb-run gulp accessibility
+- xvfb-run wct --plugin sauce
+- xvfb-run gulp accessibility
 env:
   global:
-    - secure: gZ5vpMlc9fuKSZeMmT6xf4+FIVWxET6f6Lkp6l5Qo9vL2X/KC/bMJF1v2w5xXFLFTdm/hPUDkeQRDUBBJhGcsXhJeWIvAXdPkObV9ZPRwpDnnN1qU5lOqVIy6gFjDm2Wm6UNXcRnyP1TrGpMwbG13EUtD0rF8LZqBm3B833sKS4=
-    - secure: DObDewETPYiIsASeC3UETPbQ6YBniRZdNV2eTM1xULvuFNDxXJD09KKyWOiMduublEIJRXLjBIXmD8cbVsgrbRUYA4bxcXffDeuc6q6HaQGU9HvIbLz6o3/oxi4fX2G9GwrZtijW2p2Rgw2l9koR3ovjcM97CSTWFUMh5rtXag8=
+  - secure: ZByjI4FFR4BPdtWvlsOqWzHU+pj/xWF3iykxmE96m/MRUSIhPQTSKXuRb5oIdFLH9dj0bOgxlKhrj9+9LSmUXRarluCPzw/4pDxuniZ/Wia7HzMU/9/Ht8R5pe1dYptYaq3v8L6mW60qcNkGiiJQH34vHVyVTGXyQBIadH8qqUph4Y1EKc8od2ZtHY6Ha1ydXhAqVDtKxQVwryf4G8Ko9jD7hRhnyOVIFQH5l9mcnLM8my6j2nB8noQ0KqnROFclj5U62poJOFtZtZA+BWbaKCGAhVe9ub29UA5G3NPL/Dn8omeuWXVhXn1y0SlWnaIRCZYb4aiMta02qr6ylM4y6KHTr8L+Kp6bkO2PB6QoiGHSUF5ZJgm9/dF08GY+xHzTvkjE3U9dyE8ph1LP1iT7OZN1+0WG5T+mQJmRKfJ/t61K+UtPCNBsjvlyWEdWUmUbqDVi+fKrHAAuzLk5jUL946AzjxNTCg+s8Oib3r4STg3AGHdzajEmLA8MC7bpTqgXJkZbJ9ZwRjc8U7duBIvB6MGrAjxXtn4Nz3IvQd5EwNi4n5SlxxS08Zk/gTmEkdOfHb6lxBldxGVJA2O/FGZqyk4vEup/NWUiAU8yMnttZuAOsL8/m+zVhrcFtIrniDdys5nMRMLlzTUL8ZhJbSAKlTvRFAOFOHLrX7v242/rkoE=
+  - secure: RiMhQnURzPdSgl20O33RrE3V61j4EsMnfc+7hZiDclNISkkBBXgkvPR1gYph1RJeb08EPdxXB4LTeC2F+Uh+s29C6Fov6x2orCixzkk2L6FNULSzqB4kcqMpQmYV+LuucsbA/YQwna214mNO+iG3ylzc5QwQWfJBqVDkgWy1Ur4Ka2y7+MP+idUmTVEx8S1FIEpwYqgZs1ZSnuJidqTQ5+U/nkS2cQnKlegAuPmLV1OwlNL2wpSGXUpeu4lQ6hwHy/qeA2IxurVkhEFqWSg0fQgeoprlhNJScD1zPYl3/MXSnbcDaPjE7z7DksXaZzMms+dPbvPGMRQgkylDZDkRUl8V753Ql+1AhPGJlk3cHJ7WE5h0Q2Q4GXSGYJROumclzQnuT8XR0afqIDkFVj3UAC9/CJJaX4jewf07HGKUuMv6XW5ZCEBmlh1I5I08zVdOZ8EV5XMe5rARjfgRlcAUPVcdmXRsOlPUu9/kAsXjUjyYe4ojEQHaVLy849ZYXh/qp/ezQ6QXZk4qX/rNqYHtmNYg4tVngkT2FOM9pJYIGoQRRl3SzmObnNBzR6sUdopWN9oHBrEFdDgn/1UKZCuruGyLBZMlUTElkp8Zf29DMlvPeCBL+1HjOJRNNele5+LIAq4p3ryWyPxZrT2SAPGmDMoloeSdgF8QHQKGuasBubU=
