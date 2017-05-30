@@ -244,13 +244,13 @@ Example:
 </dom-module>
 
 <!--
-An element providing a Library Pinterest Link.
+An element providing a social link selection Link based on alternate text.
 
 Example:
 
-    <uvalib-pinterest-link></uvalib-pinterest-link>
+    <uvalib-social-link></uvalib-social-link>
 
-@element uvalib-pinterest-link
+@element uvalib-social-link
 @demo demo/index.html
 @hero hero.svg
 -->
@@ -273,19 +273,19 @@ Example:
         color: var(--specialcolor,currentcolor);
       }
     </style -->
-    <template is="dom-if" if="{{_isTwitter([[alt]])}}">
+    <template is="dom-if" if="[[_isTwitter(alt)]]" restamp>
       <uvalib-twitter-link href$="[[href]]" alt$="[[alt]]"></uvalib-twitter-link>
     </template>
-    <template is="dom-if" if="{{_isFacebook([[alt]])}}">
+    <template is="dom-if" if="[[_isFacebook(alt)]]" restamp>
       <uvalib-facebook-link href$="[[href]]" alt$="[[alt]]"></uvalib-facebook-link>
     </template>
-    <template is="dom-if" if="{{_isInstagram([[alt]])}}">
+    <template is="dom-if" if="[[_isInstagram(alt)]]" restamp>
       <uvalib-instagram-link href$="[[href]]" alt$="[[alt]]"></uvalib-instagram-link>
     </template>
-    <template is="dom-if" if="{{_isPinterest([[alt]])}}">
+    <template is="dom-if" if="[[_isPinterest(alt)]]" restamp>
       <uvalib-pinterest-link href$="[[href]]" alt$="[[alt]]"></uvalib-pinterest-link>
     </template>
-    <template is="dom-if" if="{{_isOther([[alt]])}}">
+    <template is="dom-if" if="[[_isOther(alt)]]" restamp>
       <a href$="[[href]]" tabindex="-1">[[alt]]</a>
     </template>
 
@@ -306,26 +306,6 @@ Example:
          */
         alt: {
           type: String
-        },
-        isTwitter: {
-          type: Boolean,
-          observer: '_isTwitter(alt)'
-        },
-        isFacebook: {
-          type: Boolean,
-          observer: '_isFacebook(alt)'
-        },
-        isInstagram: {
-          type: Boolean,
-          observer: '_isInstagram(alt)'
-        },
-        isPinterest: {
-          type: Boolean,
-          observer: '_isPinterest(alt)'
-        },
-        isOther: {
-          type: Boolean,
-          observer: '_isOther(alt)'
         }
 
       },
@@ -343,10 +323,10 @@ Example:
         return (txt.toLowerCase().indexOf('pinterest') !== -1) ? 1 : 0;
       },
       _isOther: function(txt) {
-        if ((!txt.toLowerCase().indexOf('twitter') !== -1) &&
-          (!txt.toLowerCase().indexOf('facebook') !== -1) &&
-          (!txt.toLowerCase().indexOf('instagram') !== -1) &&
-          (!txt.toLowerCase().indexOf('pinterest') !== -1)) {
+        if ((txt.toLowerCase().indexOf('twitter') == -1) &&
+          (txt.toLowerCase().indexOf('facebook') == -1) &&
+          (txt.toLowerCase().indexOf('instagram') == -1) &&
+          (txt.toLowerCase().indexOf('pinterest') == -1)) {
           return 1;
         } else {
           return 0;
