@@ -273,20 +273,20 @@ Example:
         color: var(--specialcolor,currentcolor);
       }
     </style -->
-    <template is="dom-if" if="{{_isTwitter([[text]])}}">
-      <uvalib-twitter-link href$="[[href]]" alt$="[[text]]"></uvalib-twitter-link>
+    <template is="dom-if" if="{{_isTwitter([[alt]])}}">
+      <uvalib-twitter-link href$="[[href]]" alt$="[[alt]]"></uvalib-twitter-link>
     </template>
-    <template is="dom-if" if="{{_isFacebook([[text]])}}">
-      <uvalib-facebook-link href$="[[href]]" alt$="[[text]]"></uvalib-facebook-link>
+    <template is="dom-if" if="{{_isFacebook([[alt]])}}">
+      <uvalib-facebook-link href$="[[href]]" alt$="[[alt]]"></uvalib-facebook-link>
     </template>
-    <template is="dom-if" if="{{_isInstagram([[text]])}}">
-      <uvalib-instagram-link href$="[[href]]" alt$="[[text]]"></uvalib-instagram-link>
+    <template is="dom-if" if="{{_isInstagram([[alt]])}}">
+      <uvalib-instagram-link href$="[[href]]" alt$="[[alt]]"></uvalib-instagram-link>
     </template>
-    <template is="dom-if" if="{{_isPinterest([[text]])}}">
-      <uvalib-pinterest-link href$="[[href]]" alt$="[[text]]"></uvalib-pinterest-link>
+    <template is="dom-if" if="{{_isPinterest([[alt]])}}">
+      <uvalib-pinterest-link href$="[[href]]" alt$="[[alt]]"></uvalib-pinterest-link>
     </template>
-    <template is="dom-if" if="{{_isOther([[text]])}}">
-      <a href$="[[href]]" tabindex="-1">[[text]]</a>
+    <template is="dom-if" if="{{_isOther([[alt]])}}">
+      <a href$="[[href]]" tabindex="-1">[[alt]]</a>
     </template>
 
   </template>
@@ -304,28 +304,28 @@ Example:
         /**
          * Text used to identify the social media link. If text contains one of the supported links (Twitter, Facebook, Instagram, or Pinterest) then an icon is displayed in place of the text.
          */
-        text: {
+        alt: {
           type: String
         },
         isTwitter: {
           type: Boolean,
-          observer: '_isTwitter(text)'
+          observer: '_isTwitter(alt)'
         },
         isFacebook: {
           type: Boolean,
-          observer: '_isFacebook(text)'
+          observer: '_isFacebook(alt)'
         },
         isInstagram: {
           type: Boolean,
-          observer: '_isInstagram(text)'
+          observer: '_isInstagram(alt)'
         },
         isPinterest: {
           type: Boolean,
-          observer: '_isPinterest(text)'
+          observer: '_isPinterest(alt)'
         },
         isOther: {
           type: Boolean,
-          observer: '_isOther(text)'
+          observer: '_isOther(alt)'
         }
 
       },
