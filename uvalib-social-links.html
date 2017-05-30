@@ -257,7 +257,7 @@ Example:
 
 <dom-module id="uvalib-social-link">
   <template>
-    <!-- style is="custom-style" include="uvalib-theme">
+    <style is="custom-style" include="uvalib-theme">
       :host {
         display: block;
         box-sizing: border-box;
@@ -272,21 +272,21 @@ Example:
         width:100%;
         color: var(--specialcolor,currentcolor);
       }
-    </style -->
+    </style>
     <template is="dom-if" if="[[_isTwitter(alt)]]" restamp>
-      <uvalib-twitter-link href$="[[href]]" alt$="[[alt]]"></uvalib-twitter-link>
+      <uvalib-twitter-link href$="[[href]]" alt$="[[alt]]" style$="[[style]]"></uvalib-twitter-link>
     </template>
     <template is="dom-if" if="[[_isFacebook(alt)]]" restamp>
-      <uvalib-facebook-link href$="[[href]]" alt$="[[alt]]"></uvalib-facebook-link>
+      <uvalib-facebook-link href$="[[href]]" alt$="[[alt]]" style$="[[style]]"></uvalib-facebook-link>
     </template>
     <template is="dom-if" if="[[_isInstagram(alt)]]" restamp>
-      <uvalib-instagram-link href$="[[href]]" alt$="[[alt]]"></uvalib-instagram-link>
+      <uvalib-instagram-link href$="[[href]]" alt$="[[alt]]" style$="[[style]]"></uvalib-instagram-link>
     </template>
     <template is="dom-if" if="[[_isPinterest(alt)]]" restamp>
-      <uvalib-pinterest-link href$="[[href]]" alt$="[[alt]]"></uvalib-pinterest-link>
+      <uvalib-pinterest-link href$="[[href]]" alt$="[[alt]]" style$="[[style]]"></uvalib-pinterest-link>
     </template>
     <template is="dom-if" if="[[_isOther(alt)]]" restamp>
-      <a href$="[[href]]" tabindex="-1">[[alt]]</a>
+      <a href$="[[href]]" tabindex="-1" style$="[[style]]">[[alt]]</a>
     </template>
 
   </template>
@@ -306,6 +306,10 @@ Example:
          */
         alt: {
           type: String
+        },
+        style: {
+          type: String,
+          value: ""
         }
 
       },
