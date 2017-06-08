@@ -14,9 +14,8 @@ before_script:
 - npm install -g bower polymer web-component-tester
 - npm install -g gulp gulp-accessibility gulp-rename run-sequence
 - bower install
-install: travis wait mvn install
 script:
-- xvfb-run wct --plugin sauce
+- travis_wait 30 xvfb-run wct --plugin sauce
 - xvfb-run gulp accessibility
 env:
   global:
