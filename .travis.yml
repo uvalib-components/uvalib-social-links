@@ -15,7 +15,7 @@ before_script:
 - npm install -g gulp gulp-accessibility gulp-rename run-sequence
 - bower install
 script:
-- travis_wait 30 xvfb-run wct --plugin sauce
+- xvfb-run wct --plugin sauce
 - xvfb-run gulp accessibility
 env:
   global:
