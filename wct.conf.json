@@ -1,6 +1,6 @@
 {
   "verbose": false,
-  "testTimeout": 1200000,
+  "testTimeout": 400000,
   "plugins": {
     "sauce": {
       "disabled": true,
