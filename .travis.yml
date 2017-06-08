@@ -11,12 +11,12 @@ addons:
     packages:
     - google-chrome-stable
 before_script:
+- "export DISPLAY=:99.0"
+- "sh -e /etc/init.d/xvfb start"
+- sleep 3
 - npm install -g bower polymer web-component-tester
 - npm install -g gulp gulp-accessibility gulp-rename run-sequence
 - bower install
-- "export DISPLAY=:99.0"
-- "sh -e /etc/init.d/xvfb start"
-- sleep 3 # give xvfb some time to start
 script:
 - xvfb-run wct --plugin sauce
 - xvfb-run gulp accessibility
