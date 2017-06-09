@@ -1,8 +1,8 @@
 {
   "verbose": false,
-  "testTimeout": 500000,
+  "idleTimeout": 1000,
   "plugins": {
-    "sauce": {
+    "sauce": {
       "disabled": true,
       "browsers": [
         {
