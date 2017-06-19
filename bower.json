@@ -18,9 +18,7 @@
     "/test/"
   ],
   "dependencies": {
-    "polymer": "polymer/polymer#^1.6.1",
-    "paper-icon-button": "^1.1.2",
-    "uvalib-theme": "uvalib-components/uvalib-theme#master"
+    "uvalib-elements": "uvalib-components/uvalib-elements#master"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.1.7",
@@ -28,31 +26,33 @@
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.2.5"
   },
   "resolutions": {
-    "web-component-tester": "^5.0.0",
+    "web-component-tester": "^5.0.1",
     "iron-icons": "^1.2.1",
-    "uvalib-theme": "master",
-    "polymer": "^1.7.1",
+    "polymer": "^1.9.0",
     "uvalib-elements": "master",
-    "uvalib-events-card": "master",
-    "uvalib-analytics": "master",
-    "uvalib-banner": "master",
-    "uvalib-card": "master",
-    "uvalib-header": "master",
-    "uvalib-helper-libs": "master",
-    "uvalib-footer": "master",
-    "uvalib-alerts": "master",
-    "uvalib-logos": "master",
-    "uvalib-models": "master",
-    "uvalib-nav": "master",
-    "uvalib-hours-card": "master",
-    "uvalib-news-section": "master",
-    "uvalib-button": "master",
-    "uvalib-skip-nav": "master",
-    "uvalib-liame": "master",
-    "uvalib-search-box": "master",
-    "app-storage": "^0.9.8",
     "lodash": "^4.17.4",
-    "mocha": "^2.3.0",
-    "uvalib-social-links": "master"
+    "mocha": "^3.1.2",
+    "uvalib-alerts": "master",
+    "uvalib-images": "master",
+    "uvalib-button": "master",
+    "uvalib-banner": "master",
+    "uvalib-analytics": "master",
+    "uvalib-events-card": "master",
+    "uvalib-header": "master",
+    "uvalib-hours-card": "master",
+    "uvalib-card": "master",
+    "app-storage": "^0.10.0",
+    "uvalib-logos": "master",
+    "uvalib-nav": "master",
+    "uvalib-news-section": "master",
+    "uvalib-helper-libs": "master",
+    "uvalib-theme": "master",
+    "uvalib-search-box": "master",
+    "uvalib-skip-nav": "master",
+    "uvalib-models": "master",
+    "uvalib-liame": "master",
+    "uvalib-social-links": "master",
+    "uvalib-footer": "master",
+    "uva-footer": "master"
   }
 }
