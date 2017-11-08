@@ -18,7 +18,7 @@
     "/test/"
   ],
   "dependencies": {
-    "uvalib-elements": "uvalib-components/uvalib-elements#master"
+    "uvalib-elements": "uvalib-components/uvalib-elements#1.x"
   },
   "resolutions": {
     "lodash": "^4.17.4",
@@ -30,7 +30,6 @@
     "web-component-tester": "^5.0.1",
     "promise-polyfill": "^1.0.0",
     "app-layout": "1 - 2",
-    "uva-icon-link": "master",
     "iron-doc-viewer": "^1.0.1",
     "iron-icons": "1 - 2",
     "iron-iconset-svg": "1 - 2",
@@ -44,6 +43,9 @@
     "paper-button": "^1.0.0",
     "marked-element": "1 - 2",
     "test-fixture": "^1.0.0",
-    "uva-elements": "master"
+    "uvalib-elements": "1.x",
+    "uvalib-logos": "1.x",
+    "app-route": "^0.9.0",
+    "paper-material": "^1.0.5"
   }
 }
