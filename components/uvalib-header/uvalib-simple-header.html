@@ -1,0 +1,96 @@
+<link rel="import" href="../uvalib-theme/uvalib-ui-element.html">
+<link rel="import" href="../uva-helper-libs/polyfills/object.assign.html">
+<link rel="import" href="../uvalib-logos/uvalib-logos.html">
+<link rel="import" href="../iron-icon/iron-icon.html">
+<link rel="import" href="../uvalib-theme/uvalib-icons.html">
+<link rel="import" href="../paper-badge/paper-badge.html">
+<link rel="import" href="../uvalib-theme/uvalib-header-style.html">
+<link rel="import" href="../uvalib-alerts/uvalib-alerts.html">
+
+
+<dom-module id="uvalib-simple-header">
+  <template>
+    <custom-style><style include="uvalib-theme uvalib-header-style"></style></custom-style>
+    <div id="simple">
+      <div id="top">
+        <div id="header" class="layout horizontal" role="banner">
+          <div id="logo"><a href="//library.virginia.edu/"><uvalib-logos two-color reverse></uvalib-logos></a></div>
+          <div id="spacer" class="flex"></div>
+          <nav>
+            <ul>
+              <li><a href="//library.virginia.edu/askalibrarian"><iron-icon icon="comments"></iron-icon> Ask a Librarian</a></li>
+              <li hidden$="[[!_larger(_alertSeenCount,0)]]">
+                <a href="" on-click="viewAllAlerts" aria-labelledby="alert-text">
+                  <span id="alert-text" class="visibleMobile"> Alerts</span>
+                  <iron-icon id="alert" icon="bell" alt="Library Alerts"></iron-icon>
+                  <paper-badge id="alertBadge" for="alert" label="[[_alertSeenCount]]"></paper-badge>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <uvalib-alerts id="alerts" seen-count="{{_alertSeenCount}}"></uvalib-alerts>
+    </div>
+  </template>
+
+  <script>
+
+    /**
+     * `uvalib-simple-header`
+     * Header element for the UVA Library web apps
+     *
+     * ### Styling
+     *
+     * `<uvalib-simple-header>` provides the following custom properties and mixins for styling:
+     *
+     * Custom property | Description | Default
+     * ----------------|-------------|----------
+     * `--uvalib-header-background-color` | Background color of the header element | '--color-primary-color'
+     * `--uvalib-header-nav-background-color` | Background color of the header nav section (for large screens) | `--color-secondary-blue`
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/simple.html
+     */
+    class UvalibSimpleHeader extends UvalibUiElement {
+      static get is() { return 'uvalib-simple-header'; }
+      static get properties() {
+        return Object.assign(super.properties,
+            {
+              lite: {
+                type: Boolean,
+                value: true
+              },
+              _alertSeenCount: {
+                type: Number,
+                observer: '_seenCountChanged'
+              }
+            });
+      }
+      //Concat the this elements template with the parents
+      static get template() {
+        var parentTemplate = UvalibUiElement.template.cloneNode(true);
+        var childTemplate = Polymer.DomModule.import('uvalib-simple-header', 'template');
+        parentTemplate.content.insertBefore(childTemplate.content,null);
+        return parentTemplate;
+      }
+      connectedCallback() {
+        super.connectedCallback();
+        this._adjustHeight();
+      }
+      _adjustHeight() {
+        this.style.height=this.$.simple.clientHeight+"px";
+      }
+      _seenCountChanged(){
+        this.$.alertBadge.notifyResize();
+      }
+      viewAllAlerts(e){
+        e.preventDefault();
+        this.$.alerts.unseeAll();
+      }
+    }
+
+    window.customElements.define(UvalibSimpleHeader.is, UvalibSimpleHeader);
+  </script>
+</dom-module>

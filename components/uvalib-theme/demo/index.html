@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>uvalib-theme demo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../../iron-flex-layout/iron-flex-layout.html">
+    <link rel="import" href="../../paper-card/paper-card.html">
+
+    <link rel="import" href="../uvalib-theme.html">
+    <link rel="import" href="../uvalib-icons.html">
+
+    <custom-style>
+      <style is="custom-style" include="demo-pages-shared-styles uvalib-theme">
+      </style>
+    </custom-style>
+  </head>
+  <body>
+
+    <div class="vertical-section-container centered" style="max-width: 800px">
+      <h3>Basic uvalib-theme Color Demo</h3>
+      <demo-snippet>
+        <template>
+          <custom-style>
+            <style is="custom-style" include="uvalib-theme">
+              div.palette {
+                @apply --layout-horizontal;
+                @apply --layout-wrap;
+              }
+              div.palette div {width: 200px; height: 200px; color: var(--color-white);}
+              .orange {background-color: var(--color-primary-orange);}
+              .blue {background-color: var(--color-primary-blue);}
+              .white {background-color: var(--color-white); color: var(--color-text-gray) !important;}
+              .orange-2 {background-color: var(--color-secondary-orange);}
+              .blue-2 {background-color: var(--color-secondary-blue);}
+              .md-blue {background-color: var(--color-medium-blue);}
+              .lt-blue {background-color: var(--color-light-blue);}
+              .lt-gry {background-color: var(--color-light-gray); color: var(--color-text-gray) !important;}
+              .md-gry {background-color: var(--color-medium-gray);}
+              .txt-gry {background-color: var(--color-text-gray);}
+              .emg-red {background-color: var(--color-emergency-red);}
+            </style>
+          </custom-style>
+          <div class="palette">
+            <div class="orange">Primary Orange</div>
+            <div class="blue">Primary Blue</div>
+            <div class="white">White</div>
+            <div class="orange-2">Secondary Orange</div>
+            <div class="blue-2">Secondary Blue</div>
+            <div class="md-blue">Medium Blue</div>
+            <div class="lt-blue">Light Blue</div>
+            <div class="lt-gry">Light Gray</div>
+            <div class="md-gry">Medium Gray</div>
+            <div class="txt-gry">Text Gray</div>
+            <div class="emg-red">Emergency Red</div>
+          </div>
+        </template>
+      </demo-snippet>
+
+      <h3>Basic uvalib-theme Font Demo</h3>
+      <demo-snippet>
+        <template>
+          <custom-style>
+            <style is="custom-style" include="uvalib-theme">
+              .primary { font-family: var(--font-primary); }
+              .secondary { font-family: var(--font-secondary); }
+
+              .light {font-weight: var(--font-weight-light);}
+              .book {font-weight: var(--font-weight-book);}
+              .medium {font-weight: var(--font-weight-medium);}
+            </style>
+          </custom-style>
+          <h4>Font Weights</h4>
+            <div class="primary">
+               <div class="light">Light Font Weight - 300</div>
+               <div class="book">Book Font Weight - 400</div>
+               <div class="medium">Medium Font Weight - 500</div>
+            </div>
+
+            <div class="secondary">
+               <div class="light">Light Font Weight - 300</div>
+               <div class="book">Book Font Weight - 400</div>
+               <div class="medium">Medium Font Weight - 500</div>
+            </div>
+            <div class="group"></div>
+        </template>
+      </demo-snippet>
+
+      <h3>Basic uvalib-theme Style Mixin Demo</h3>
+      <demo-snippet>
+        <template>
+        <custom-style>
+          <style is="custom-style" include="uvalib-theme">
+            .font-display4 { @apply --font-display4; }
+            .font-display3 { @apply --font-display3;}
+            .font-display2 { @apply --font-display2;}
+            .font-display1 { @apply --font-display1;}
+            .font-headline { @apply --font-headline;}
+            .font-title { @apply --font-title;}
+            .font-subheading { @apply --font-subheading;}
+            .font-body2 { @apply --font-body2;}
+            .font-body1 { @apply --font-body1;}
+            .font-caption { @apply --font-caption;}
+            .font-menu { @apply --font-menu;}
+            .font-button { @apply --font-button;}
+          </style>
+        </custom-style>
+        <h4>Font Styles</h4>
+        <div class="font-display4">Display4</div>
+        <div class="font-display3">Display3</div>
+        <div class="font-display2">Display2</div>
+        <div class="font-display1">Display1</div>
+        <div class="font-headline">Headline</div>
+        <div class="font-title">Title</div>
+        <div class="font-subheading">Subheading</div>
+        <div class="font-body2">Body2</div>
+        <div class="font-body1">Body1</div>
+        <div class="font-caption">Caption</div>
+        <div class="font-menu">Menu</div>
+        <div class="font-button">Button</div>
+
+        <p class="body2">Strong body copy</p>
+        <p class="body1">Normal Body copy Lorem ipsum dolor sit amet, iusto
+          efficiantur te has, cu mea invenire reformidans, erant delectus
+          laboramus duo no. Sea ei feugait voluptatibus. Eu sit illud dicta delenit. '
+          Luptatum urbanitas cum an, per ne paulo petentium.
+        </p>
+        <blockquote>
+          <p>"Quote lorem ipsum dolor site amet."</p>
+        </blockquote>
+          <ul>
+            <li>Bullet list item</li>
+            <li>Bullet list item</li>
+            <li>Bullet list item</li>
+            <li>Bullet list item</li>
+          </ul>
+          <ol>
+            <li>Numbered list 1</li>
+            <li>Numbered list 2</li>
+            <li>Numbered list 3</li>
+          </ol>
+          <a href="#">Link</link>
+        </template>
+      </demo-snippet>
+
+      <h3>Defined Lists</h3>
+      <demo-snippet>
+        <custom-style>
+          <style is="custom-style" include="uvalib-theme"></style>
+        </custom-style>
+        <paper-card class="uvalibSidebarList" heading="Quick Facts (2015)" image="http://placehold.it/700x167/ABABAB/000000" alt="Description of the image">
+          <div class="card-content">
+            <dl>
+              <dt>Facilities</dt>
+              <dd>12</dd>
+              <dt>Staff</dt>
+              <dd>212</dd>
+              <dt>Budget</dt>
+              <dd>$33 million</dd>
+              <dt>Books</dt>
+              <dd>&gt;5 million</dd>
+            </dl>
+          </div>
+        </paper-card>
+      </demo-snippet>
+
+      <h3>Icon Demo</h3>
+      <demo-snippet>
+        <template>
+          <custom-style>
+            <style is="custom-style" include="uvalib-theme">
+            </style>
+          </custom-style>
+          <iron-icon icon="angle-left"></iron-icon>
+          <iron-icon icon="angle-right"></iron-icon>
+          <iron-icon icon="angle-down"></iron-icon>
+          <iron-icon icon="angle-up"></iron-icon>
+          <iron-icon icon="angle-double-up"></iron-icon>
+          <iron-icon icon="bell"></iron-icon>
+          <iron-icon icon="search"></iron-icon>
+          <iron-icon icon="bars"></iron-icon>
+          <iron-icon icon="user"></iron-icon>
+          <iron-icon icon="clock-o"></iron-icon>
+          <iron-icon icon="comments"></iron-icon>
+          <iron-icon icon="circle-o"></iron-icon>
+          <iron-icon icon="circle"></iron-icon>
+          <iron-icon icon="chevron-left"></iron-icon>
+          <iron-icon icon="chevron-right"></iron-icon>
+          <iron-icon icon="calendar"></iron-icon>
+          <iron-icon icon="envelope-o"></iron-icon>
+          <iron-icon icon="exclamation-circle"></iron-icon>
+          <iron-icon icon="twitter-square"></iron-icon>
+          <iron-icon icon="facebook-square"></iron-icon>
+          <iron-icon icon="pinterest-square"></iron-icon>
+          <iron-icon icon="instagram"></iron-icon>
+          <iron-icon icon="university"></iron-icon>
+          <iron-icon icon="book"></iron-icon>
+          <iron-icon icon="graduation-cap"></iron-icon>
+          <iron-icon icon="cloud"></iron-icon>
+          <iron-icon icon="times"></iron-icon>
+          <iron-icon icon="home"></iron-icon>
+          <iron-icon icon="globe"></iron-icon>
+          <iron-icon icon="close"></iron-icon>
+          <iron-icon icon="cloud-off"></iron-icon>
+          <iron-icon icon="mail"></iron-icon>
+          <iron-icon icon="menu"></iron-icon>
+          <iron-icon icon="share"></iron-icon>
+          <iron-icon icon="timer"></iron-icon>
+          <iron-icon icon="error"></iron-icon>
+          <iron-icon icon="caret-down"></iron-icon>
+          <iron-icon icon="caret-up"></iron-icon>
+          <iron-icon icon="caret-left"></iron-icon>
+          <iron-icon icon="caret-right"></iron-icon>
+        </template>
+      </demo-snippet>
+
+      <h3>Font icons demo</h3>
+      <demo-snippet>
+        <template>
+          <custom-style>
+            <style is="custom-style" include="uvalib-theme">
+              ul {
+                list-style-type: none;
+              }
+              li:before {
+                font-family: uvalib-custom-icons;
+                content: '\f007';
+                margin:0 5px 0 15px;
+                color: #f00;
+              }
+            </style>
+          </custom-style>
+          <h1 style="font-family: uvalib-custom-icons;">&#xf007;</h1>
+          <div>
+            <span class="uvalib-icon-graduation-cap"></span>
+          </div>
+          <ul>
+            <li style="">
+              foo
+            </li>
+          </ul>
+        </template>
+      </demo-snippet>
+    </div>
+
+  </body>
+</html>

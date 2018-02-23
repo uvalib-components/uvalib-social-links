@@ -1,0 +1,17 @@
+{
+  "name": "uvalib-skip-nav",
+  "description": "Skip to page content",
+  "main": "uvalib-skip-nav.html",
+  "dependencies": {
+    "uvalib-elements": "uvalib-components/uvalib-elements#master",
+    "iron-a11y-keys": "PolymerElements/iron-a11y-keys#^2.0.0"
+  },
+  "devDependencies": {
+    "web-component-tester": "^6.0.0"
+  },
+  "resolutions": {
+    "lodash": "^4.17.4",
+    "web-component-tester": "^6.0.0",
+    "polymer": "^2.0.0"
+  }
+}

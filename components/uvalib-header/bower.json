@@ -1,0 +1,11 @@
+{
+  "name": "uvalib-header",
+  "description": "Header element for the UVA Library web apps",
+  "main": "uvalib-header.html",
+  "dependencies": {
+    "uvalib-elements": "uvalib-components/uvalib-elements#master"
+  },
+  "resolutions": {
+    "lodash": "^4.17.4"
+  }
+}

@@ -1,0 +1,92 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../uvalib-theme/uvalib-theme.html">
+<link rel="import" href="../uvalib-theme/uvalib-searchbox-style.html">
+<link rel="import" href="../paper-input/paper-input.html">
+<link rel="import" href="../paper-button/paper-button.html">
+
+<dom-module id="uvalib-search-box">
+  <template>
+    <custom-style>
+      <style include="uvalib-theme uvalib-searchbox-style"></style>
+    </custom-style>
+
+    <div role="search">
+      <h2 id="searchStr" class="screen-reader-text">Search</h2>
+      <nav>
+        <ul>
+          <li>
+            <a id="catalogAdv" href="https://search.lib.virginia.edu/advanced?catalog_select=catalog" aria-labelledby="catalogAdv searchStr">Catalog Advanced <span aria-hidden="true">&gt;</span></a>
+          </li>
+          <li>
+            <a id="articleAdv" href="https://search.lib.virginia.edu/articles/advanced?catalog_select=articles" aria-labelledby="articleAdv searchStr">Article Advanced <span aria-hidden="true">&gt;</span></a>
+          </li>
+          <li>
+            <a href="[[_domain]]/search">Site Search <span aria-hidden="true">&gt;</span></a>
+          </li>
+        </ul>
+      </nav>
+      <form is="iron-form" method="get" action="[[_virgoSearchUrl]]" id="virgoSearchForm">
+        <input type="hidden" name="catalog_select" value="all">
+        <input type="hidden" name="q" value$="[[_query]]">
+        <label class="screen-reader-text" for="q1">[[_searchVirgoPlaceholder]]</label>
+        <div class="searchField">
+          <paper-input on-keydown="_checkForEnterVirgo" no-label-float class="search-field" id="q1" value="{{_query}}" label="" placeholder="[[_searchVirgoPlaceholder]]" tabindex="0"></paper-input>
+          <paper-button class="search" on-tap="submitCatalogSearch" alt="Search Virgo"><span>Search</span></paper-button>
+        </div>
+      </form>
+    </div>
+  </template>
+
+  <script>
+    /**
+     * `uvalib-search-box`
+     * Search Box for UVA Library pages
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class UvalibSearchBox extends Polymer.Element {
+      static get is() { return 'uvalib-search-box';}
+      static get properties() { return {
+        _virgoSearchUrl: {
+          type: String,
+          value: "https://search.lib.virginia.edu/catalog"
+        },
+        _query: String,
+        _searchVirgoPlaceholder: {
+          type: String,
+          value: "Search Virgo for books, articles, digital materials, and more."
+        },
+        /** Set this to true when you want the links to be relative (when used in library.virginia.edu) **/
+        relativeLinks: {
+          type: Boolean,
+          value: false
+        },
+        _domain: {
+          type: String,
+          computed: "_makeLinkDomain(relativeLinks)"
+        }
+      }}
+
+      changeFocusToCatalogAdvanced() {
+        this.$.catalogAdv.focus();
+      }
+
+      submitCatalogSearch() {
+        this.$.virgoSearchForm.submit();
+      }
+      _checkForEnterVirgo(e) {
+          // check if 'enter' was pressed
+          if (e.keyCode === 13) {
+              this.submitCatalogSearch();
+          }
+      }
+      _makeLinkDomain(relLinks) {
+        return (relLinks)? "":"https://www.library.virginia.edu";
+      }
+    }
+
+    window.customElements.define(UvalibSearchBox.is, UvalibSearchBox);
+  </script>
+</dom-module>

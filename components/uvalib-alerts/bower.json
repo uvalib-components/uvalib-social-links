@@ -1,0 +1,11 @@
+{
+  "name": "uvalib-alerts",
+  "description": "Manages the UX for Library Web Alerts",
+  "main": "uvalib-alerts.html",
+  "dependencies": {
+    "uvalib-elements": "uvalib-components/uvalib-elements#master"
+  },
+  "resolutions": {
+    "lodash": "^4.17.4"
+  }
+}

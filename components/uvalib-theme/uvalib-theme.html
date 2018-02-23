@@ -1,0 +1,194 @@
+<link rel="import" href="../polymer/polymer.html">
+<!--<link rel="import" href="typekit.html">-->
+<link rel="import" href="../uva-theme/uva-theme.html">
+<link rel="import" href="color.html">
+<link rel="import" href="uvalib-styles.html">
+
+<script src="//use.typekit.net/tgy5tlj.js"></script>
+<script>try{Typekit.load();}catch(e){}</script>
+
+<custom-style>
+  <style is="custom-style">
+  @font-face {
+      font-family: 'franklingothic-book';
+      src: url('https://wwwstatic.lib.virginia.edu/fonts/franklingothic-book-webfont.woff2') format('woff2'),
+           url('https://wwwstatic.lib.virginia.edu/fonts/franklingothic-book-webfont.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+  }
+  @font-face {
+      font-family: 'franklingothic-demi';
+      src: url('https://wwwstatic.lib.virginia.edu/fonts/franklingothic-demi-webfont.woff2') format('woff2'),
+           url('https://wwwstatic.lib.virginia.edu/fonts/franklingothic-demi-webfont.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+  }
+
+  @font-face {
+      font-family: 'uvalib-custom-icons';
+      src: url('https://wwwstatic.lib.virginia.edu/fonts/uvalib-icon-font-02142018.woff2') format('woff2'),
+           url('https://wwwstatic.lib.virginia.edu/fonts/uvalib-icon-font-02142018.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+  }
+
+    /* making site backgtround full width */
+    body {
+      margin: 0;
+    }
+
+    html {
+
+      /* max display width */
+      --uvalib-display-width-max: 1200px;
+
+      /* font variables */
+      --font-primary: franklingothic-book, sans-serif;
+      --font-secondary: franklingothic-demi, sans-serif;
+
+      --font-weight-light: 300;
+      --font-weight-book: 400;
+      --font-weight-medium: 500;
+
+      /* typography variables */
+
+      --font-display4: {
+        font-family: var(--font-primary);
+        font-size: 112px;
+        font-weight: 300;
+        line-height: 112px;
+        color: var(--color-text-dark-secondary);
+        text-transform: none;
+      };
+
+      --font-display3: {
+        font-family: var(--font-primary);
+        font-size: 56px;
+        font-weight: 400;
+        line-height: 56px;
+        color: var(--color-text-dark-secondary);
+        text-transform: none;
+      };
+
+      --font-display2: {
+        font-family: var(--font-primary);
+        font-size: 45px;
+        font-weight: 400;
+        line-height: 48px;
+        color: var(--color-text-dark-secondary);
+        text-transform: none;
+      };
+
+      --font-display1: {
+        font-family: var(--font-primary);
+        font-size: 34px;
+        font-weight: 400;
+        line-height: 40px;
+        color: var(--color-text-dark-secondary);
+        text-transform: none;
+      };
+
+      --font-headline: {
+        font-family: var(--font-primary);
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 32px;
+        color: var(--color-text-dark);
+      };
+
+      --font-title: {
+        font-family: var(--font-primary);
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 28px;
+        color: var(--color-text-dark);
+      };
+
+      --font-subheading: {
+        font-family: var(--font-primary);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        color: var(--color-text-dark);
+      };
+
+      --font-body2: {
+        font-family: var(--font-primary);
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 24px;
+        color: var(--color-text-dark);
+      };
+
+      --font-body1: {
+        font-family: var(--font-primary);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+        color: var(--color-text-dark);
+      };
+
+      --font-caption: {
+        font-family: var(--font-primary);
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 16px;
+        color: var(--color-text-dark-secondary);
+      };
+
+      --font-menu: {
+        font-family: var(--font-primary);
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 17px;
+        color: var(--color-text-dark);
+      };
+
+      --font-button: {
+        font-family: var(--font-primary);
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 18px;
+        text-transform: uppercase;
+        color: var(--color-text-dark);
+      };
+
+      /* added here as all cards don't use uvalib-card */
+      --font-card-content: {
+        font-size: 16px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: left;
+        color: var(--uvalib-blue-a400);
+      };
+
+
+      --paper-card: {
+        font-family: var(--font-primary);
+      }
+      --paper-card-header-text: {
+        font-family: var(--font-primary);
+      }
+      --paper-card-header-image-text: {
+        font-family: var(--font-primary);
+      }
+      --paper-card-header: {
+        font-family: var(--font-primary);
+      }
+      --paper-card-content: {
+        font-family: var(--font-primary);
+      }
+      --paper-card-actions: {
+        font-family: var(--font-primary);
+      }
+      --paper-button: {
+        font-family: var(--font-primary);
+      }
+
+    }
+
+  </style>
+</custom-style>

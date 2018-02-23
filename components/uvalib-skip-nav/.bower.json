@@ -1,0 +1,27 @@
+{
+  "name": "uvalib-skip-nav",
+  "description": "Skip to page content",
+  "main": "uvalib-skip-nav.html",
+  "dependencies": {
+    "uvalib-elements": "uvalib-components/uvalib-elements#master",
+    "iron-a11y-keys": "PolymerElements/iron-a11y-keys#^2.0.0"
+  },
+  "devDependencies": {
+    "web-component-tester": "^6.0.0"
+  },
+  "resolutions": {
+    "lodash": "^4.17.4",
+    "web-component-tester": "^6.0.0",
+    "polymer": "^2.0.0"
+  },
+  "homepage": "https://github.com/uvalib-components/uvalib-skip-nav",
+  "_release": "f205c4b7f4",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "f205c4b7f404ec4ab6a335b693d4fb1e7029b01d"
+  },
+  "_source": "https://github.com/uvalib-components/uvalib-skip-nav.git",
+  "_target": "master",
+  "_originalSource": "uvalib-components/uvalib-skip-nav"
+}

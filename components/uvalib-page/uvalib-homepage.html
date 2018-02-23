@@ -1,0 +1,89 @@
+<link rel="import" href="../uvalib-theme/uvalib-ui-element.html">
+<link rel="import" href="../uvalib-card/uvalib-card.html">
+<link rel="import" href="../paper-card/paper-card.html">
+<link rel="import" href="../uvalib-theme/uvalib-theme.html">
+<link rel="import" href="../uvalib-theme/uvalib-page-style.html">
+<link rel="import" href="../paper-material/paper-material.html">
+<link rel="import" href="../uvalib-card/uvalib-hours-card.html">
+
+
+<dom-module id="uvalib-homepage">
+  <template>
+    <custom-style>
+      <style include="uvalib-theme uvalib-page-style iron-flex-factors">
+
+        :host {
+          display: block;
+        }
+
+        paper-material, paper-card {
+          margin: 10px 10px 10px 10px;
+          /*max-width: 500px*/;
+          min-width: 290px;
+          height: 300px;
+        }
+
+        paper-card {
+          background-color: lightgray;
+        }
+      </style>
+
+    </custom-style>
+
+    <div class="layout horizontal wrap">
+      <paper-material class="flex-2" style="background: url(https://storage.googleapis.com/uvalib-api.appspot.com/5f66df14-cfab-4c38-a06f-a3da7e6f9c76.webp) no-repeat center center;" elevation="3"></paper-material>
+      <uvalib-hours-card></uvalib-hours-card>
+    </div>
+
+    <div class="shady layout horizontal wrap center-justified">
+      <uvalib-card id="research" class="flex" uuid="1731a2e1-8094-415b-aed6-9b7e2eb844bd"></uvalib-card>
+      <uvalib-card id="spaces" class="flex" uuid="68a9ea1d-0864-45d9-81be-224a9cf744e6"></uvalib-card>
+      <uvalib-card id="services" class="flex" uuid="3c39aacf-2f2f-49e6-8ad2-b1ec0e29f44d"></uvalib-card>
+    </div>
+
+    <div class="layout horizontal wrap center-justified">
+      <paper-card class="flex" heading="Events" elevation="3">
+        <div class="card-content"></div>
+        <div class="card-actions"></div>
+      </paper-card>
+      <paper-card class="flex-2" style="max-width:1000px;" heading="Library News" elevation="3">
+        <div class="card-content"></div>
+        <div class="card-actions"></div>
+      </paper-card>
+    </div>
+
+    <div class="shady layout horizontal wrap center-justified">
+      <uvalib-card id="support" uuid="b528d30b-7dcb-4fe5-a752-6a46170f4c6a"></uvalib-card>
+      <uvalib-card id="support" uuid="793b7ec2-17b4-44f2-b9fa-119abcbc9ac4"></uvalib-card>
+    </div>
+
+  </template>
+
+  <script>
+    /**
+     * `uvalib-homepage`
+     * UVA Library page layout component
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class UvalibHomepage extends UvalibUiElement {
+      static get is() { return 'uvalib-homepage'; }
+      static get properties() {
+        return Object.assign(super.properties,{
+
+        });
+      }
+      //Concat the this elements template with the parents
+      static get template() {
+        var parentTemplate = UvalibUiElement.template.cloneNode(true);
+        var childTemplate = Polymer.DomModule.import('uvalib-homepage', 'template');
+        parentTemplate.content.insertBefore(childTemplate.content,null);
+        return parentTemplate;
+      }
+    }
+
+    window.customElements.define(UvalibHomepage.is, UvalibHomepage);
+  </script>
+</dom-module>

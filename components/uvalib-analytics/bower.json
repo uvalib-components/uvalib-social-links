@@ -1,0 +1,8 @@
+{
+  "name": "uvalib-analytics",
+  "description": "Web tracking for the Library",
+  "main": "uvalib-analytics.html",
+  "dependencies": {
+    "uvalib-elements": "uvalib-components/uvalib-elements#master"
+  }
+}

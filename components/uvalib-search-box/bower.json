@@ -1,0 +1,11 @@
+{
+  "name": "uvalib-search-box",
+  "description": "Search Box for UVA Library pages",
+  "main": "uvalib-search-box.html",
+  "dependencies": {
+    "uvalib-elements": "uvalib-components/uvalib-elements#master"
+  },
+  "resolutions": {
+    "lodash": "^4.17.4"
+  }
+}

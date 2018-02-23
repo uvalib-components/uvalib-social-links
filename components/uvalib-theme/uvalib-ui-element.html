@@ -1,0 +1,80 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="./uvalib-theme.html">
+<link rel="import" href="../iron-media-query/iron-media-query.html">
+<link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../polymer/lib/elements/dom-if.html">
+
+<dom-module id="uvalib-ui-element">
+  <template>
+    <custom-style>
+      <style include="uvalib-theme iron-flex">
+        [hidden] {display:none}
+      </style>
+    </custom-style>
+    <template is="dom-if" if="[[_isResponsive]]">
+      <iron-media-query query="[[smallScreenQuery]]" query-matches="{{smallScreen}}"></iron-media-query>
+      <iron-media-query query="[[mediumScreenQuery]]" query-matches="{{mediumScreen}}"></iron-media-query>
+      <iron-media-query query="[[largeScreenQuery]]" query-matches="{{largeScreen}}"></iron-media-query>
+    </template>
+  </template>
+
+  <script>
+    /**
+     * `uvalib-ui-element`
+     *
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html uvalib-theme theme library
+     * @demo demo/page-patterns.html uvalib-page-style styles and patterns
+     */
+    class UvalibUiElement extends Polymer.Element {
+      static get is() { return 'uvalib-ui-element'; }
+      static get properties() {
+        return {
+          smallScreenQuery: {
+            type: String,
+            value: "(max-width: 600px)"
+          },
+          mediumScreenQuery: {
+            type: String,
+            value: "(min-width: 600px) and (max-width: 992px)"
+          },
+          largeScreenQuery: {
+            type: String,
+            value: "(min-width: 992px)"
+          },
+          smallScreen:{
+            type: Boolean,
+            reflectToAttribute: true
+          },
+          mediumScreen:{
+            type: Boolean,
+            reflectToAttribute: true
+          },
+          largeScreen:{
+            type: Boolean,
+            reflectToAttribute: true
+          },
+          lite: {
+            type: Boolean,
+            reflectToAttribute: true,
+            value: false
+          }
+        };
+      }
+      _isResponsive(){
+        return !(this.lite);
+      }
+      _or(t1, t2){
+        return (t1 || t2);
+      }
+      _larger(n1, n2){
+        return (n1 > n2);
+      }
+    }
+
+    window.customElements.define(UvalibUiElement.is, UvalibUiElement);
+  </script>
+</dom-module>

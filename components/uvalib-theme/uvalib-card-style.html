@@ -1,0 +1,194 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<dom-module id="uvalib-card-style">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      :host {
+
+        --paper-card-header-image-text: {
+          color: var(--color-white);
+          background: linear-gradient(to bottom, rgba(0,0,0,0) 10%, rgba(0,0,0,1) 100%);
+          width: 100%;
+        };
+        --paper-card: {
+/*          @apply --layout-vertical; */
+/*          height: 100%; */
+            margin: 1em;
+            max-width: 600px;
+            min-width: 290px;
+        }
+        --paper-card-content: {
+/*          @apply --layout-flex; */
+        }
+
+      }
+      :host[dark] {
+        color: var(--color-white);
+        --paper-card-background-color: var(--color-primary-orange);
+      }
+
+      h3 {
+        @apply --font-title;
+        margin-bottom: 0;
+        padding-left: .75em;
+      }
+      ul, nav ul {
+        list-style: none;
+        padding-left: 1.75em;
+      }
+      .wide {
+        margin: 1em;
+        max-width: calc(100% - 20px);
+        width: 100%;
+      }
+      .medWidth {
+        max-width: 50em;
+      }
+      .card-aux-container {
+        @apply --layout-horizontal;
+        @apply --layout-wrap;
+      }
+      .card-aux-container > div {
+        @apply --layout-flex;
+      }
+      .text-section, .card-nav, .card-index {
+        min-width: 200px;
+      }
+      .card-nav ul {
+        list-style: none;
+        padding-left: 0;
+        margin-top: .25em;
+        margin-bottom: 1.5em;
+      }
+      ul.uvalib-card-list {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      .text-section {}
+      .card-nav div { font-weight: 700; }
+      .card-index {
+        @apply --layout-horizontal;
+        @apply --layout-wrap;
+      }
+      .card-index div {
+        min-width: 50px;
+        min-height: 50px;
+        text-align: center;
+        position: relative;
+        @apply --layout-horizontal;
+        @apply --layout-center-justified;
+        @apply --layout-center;
+      }
+      .card-content {
+        overflow: hidden;
+        padding: 0;
+      }
+      .card-content p {
+        padding-left: 1em;
+        padding-right: 1em;
+      }
+      .text-section, .card-nav {
+        padding: 2em;
+      }
+      .card-nav, .card-index {
+        background-color: var(--color-primary-blue);
+        color: var(--color-white);
+      }
+      .card-index a {
+        @apply --font-headline;
+      }
+      .card-nav ul li a, .card-index a {
+        color: var(--color-white);
+      }
+      .card-actions a {
+        color: var(--color-primary-orange);
+        font-weight: bold;
+      }
+
+      /*Addressing Accessibility focus*/
+      .card-nav ul li a:focus, .card-index a:focus {
+        outline: var(--color-accessibility-outline-dark-bg) dotted 3px;
+      }
+
+      /*Definition List*/
+      dl {
+        padding: 0 1em;
+      }
+      dd {
+        padding-top: 0;
+        padding-bottom: .25em;
+        padding-right: 1em;
+        padding-left: 1em;
+        margin-top: 0;
+        margin-left: 0;
+        margin-bottom: 1.5em;
+      }
+      dd, dt {
+        border-left: 2px solid var(--uvalib-grey-500);
+      }
+
+      dt a::before, dd a::before {
+        font-family: uvalib-custom-icons;
+        content: "\f0da";
+        padding-right: .75em;
+        position: relative;
+        top: 0.1em;
+      }
+      a:hover::before {
+        text-decoration: none;
+      }
+      dt, .uvalibSidebarList dt a {
+        padding-left: .45em;
+        font-weight: 700;
+        font-size: 1em;
+        margin: 0;
+      }
+      .uvalibSidebarList dt a {
+        padding-left: 0;
+        margin-left: -0.4em;
+      }
+      .uvalibSidebarList dt {
+        border-left: none;
+      }
+      /*END*/
+
+  /* Styles the background and element size for the sidebar*/
+      /* small screen */
+      :host([small-screen]) aside {
+        margin: 1em;
+        width: auto;
+        padding: 0px;
+        background-color: none;
+      }
+      /* medium screen */
+      :host([medium-screen]) aside {
+        margin-top: -0.5em;
+        padding-top: 2em;
+        padding-right: 1em;
+        padding-left: 1em;
+        background-color: var(--uvalib-grey-200);
+      }
+      /* large screen */
+      :host([large-screen]) aside {
+          padding: 30px;
+          background-color: var(--uvalib-grey-200);
+      }
+  /*END*/
+  /*Homepage cards*/
+  :host([small-screen]) .shady #exhibit, :host([small-screen]) .shady #support {
+      max-width: none;
+  }
+  :host([medium-screen]) .shady #exhibit, :host([medium-screen]) .shady #support {
+      max-width: 45%;
+  }
+  :host([large-screen]) .shady #exhibit, :host([large-screen]) .shady #support {
+      max-width: 46%;
+  }
+
+    </style>
+  </template>
+</dom-module>

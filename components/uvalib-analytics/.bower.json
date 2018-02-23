@@ -1,0 +1,18 @@
+{
+  "name": "uvalib-analytics",
+  "description": "Web tracking for the Library",
+  "main": "uvalib-analytics.html",
+  "dependencies": {
+    "uvalib-elements": "uvalib-components/uvalib-elements#master"
+  },
+  "homepage": "https://github.com/uvalib-components/uvalib-analytics",
+  "_release": "193095fc4e",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "193095fc4e4712a8f2f14c4a0f9d8a9e0be6670a"
+  },
+  "_source": "https://github.com/uvalib-components/uvalib-analytics.git",
+  "_target": "master",
+  "_originalSource": "uvalib-components/uvalib-analytics"
+}

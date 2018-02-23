@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>uvalib-header demo</title>
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../uvalib-theme/uvalib-theme.html">
+    <link rel="import" href="../uvalib-simple-header.html">
+
+    <custom-style>
+      <style is="custom-style" include="uvalib-theme">
+        body {
+          margin: 0;
+          height: 100vh;
+        }
+        .content {
+          height: 5000px;
+        }
+      </style>
+    </custom-style>
+  </head>
+  <body>
+    <uvalib-simple-header></uvalib-simple-header>
+    <div class="content">Hello World</div>
+  </body>
+</html>

@@ -1,0 +1,229 @@
+<link rel="import" href="../uvalib-theme/uvalib-ui-element.html">
+<link rel="import" href="../uvalib-theme/uvalib-header-style.html">
+<link rel="import" href="../app-layout/app-header/app-header.html">
+<link rel="import" href="../app-layout/app-scroll-effects/effects/waterfall.html">
+<link rel="import" href="../uvalib-search-box/uvalib-search-box.html">
+<link rel="import" href="../iron-meta/iron-meta.html">
+
+<link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../iron-flex-layout/iron-flex-layout-classes.html">
+
+<dom-module id="uvalib-header">
+  <template>
+    <custom-style>
+      <style include="uvalib-theme uvalib-header-style iron-flex">
+        [hide] paper-badge {
+          opacity: 0;
+        }
+        [hide] iron-icon {
+          opacity: .5;
+        }
+
+      </style>
+    </custom-style>
+    <template is="dom-if" if="[[lazyLoadComplete]]">
+      <paper-dialog id="menuDialog" with-backdrop>
+        <div id="menuContainer">
+          <div id="menuTop">
+            <a href="[[_domain]][[libraryHomeLink]]"><uvalib-logos stacked text-only reverse></uvalib-logos></a>
+            <div class="spacer"></div>
+            <paper-button dialog-dismiss>Close x</paper-button>
+          </div>
+          <uvalib-search-box relative-links$="[[relativeLinks]]" id="menuDialogSearch"></uvalib-search-box>
+
+          <div id="menuDialogNav">
+            <nav class="horizontal layout wrap">
+              <ul class="vertical layout">
+                <li>
+                  <a id="menuDialogNavFirstItem" href="[[_domain]]/about-uva-library">About</a>
+                </li>
+                <li>
+                  <a href="[[_domain]]/research">Research</a>
+                </li>
+                <li>
+                  <a href="[[_domain]]/collections">Collections</a>
+                </li>
+                <li>
+                  <a href="[[_domain]]/services">Services</a>
+                </li>
+              </ul>
+              <ul class="vertical layout">
+                <li>
+                  <a href="[[_domain]]/hours"><iron-icon icon="clock-o"></iron-icon> Hours</a>
+                </li>
+                <li>
+                  <a href="[[_domain]]/askalibrarian"><iron-icon icon="comments"></iron-icon> Ask a Librarian</a>
+                </li>
+                <li>
+                  <a href="http://search.lib.virginia.edu/account/review"><iron-icon icon="user"></iron-icon> Account</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </paper-dialog>
+    </template>
+
+    <app-header id="header" condenses reveals fixed effects="waterfall" role="banner">
+      <div id="top">
+        <div>
+          <div id="logo">
+            <a href="[[_domain]][[libraryHomeLink]]"><uvalib-logos stacked$=[[largeScreen]] text-only reverse></uvalib-logos></a>
+          </div>
+          <div id="menuButton">
+            <paper-button icon="search" reverse outline on-click="_openMenu">Menu</paper-button>
+          </div>
+          <uvalib-search-box relative-links$="[[relativeLinks]]" id="search"></uvalib-search-box>
+        </div>
+      </div>
+      <div id="bottom" sticky>
+        <div id="menu">
+          <nav>
+            <ul>
+              <li>
+                <a class="largeScreen" id="menuLargeScreenFirstItem" href="[[_domain]]/about-uva-library">About</a>
+              </li>
+              <li>
+                <a class="largeScreen" href="[[_domain]]/research">Research</a>
+              </li>
+              <li>
+                <a class="largeScreen" href="[[_domain]]/collections">Collections</a>
+              </li>
+              <li>
+                <a class="largeScreen" href="[[_domain]]/services">Services</a>
+              </li>
+              <li>
+                <a id="menuNotLargeScreenFirstItem" href="[[_domain]]/hours"><iron-icon icon="clock-o"></iron-icon> Hours</a>
+              </li>
+              <li>
+                <a href="[[_domain]]/askalibrarian"><iron-icon icon="comments"></iron-icon> Ask a Librarian</a>
+              </li>
+              <li>
+                <a href="http://search.lib.virginia.edu/account/review"><iron-icon icon="user"></iron-icon> Account</a>
+              </li>
+              <li>
+                <div style="position: relative; display: inline-block" hide$="[[!_larger(_alertSeenCount,0)]]">
+                  <a href="" id="alert" on-click="viewAllAlerts" aria-labelledby="alert-text">
+                    <span id="alert-text" class="visibleMobile"> Alerts</span>
+                    <iron-icon icon="bell" alt="Library Alerts"></iron-icon>
+                    <paper-badge for="alert" label="[[_alertSeenCount]]"></paper-badge>
+                  </a>
+                </div>
+              </li>
+            </ul>
+
+          </nav>
+        </div>
+        <uvalib-alerts id="alerts" seen-count="{{_alertSeenCount}}" on-size-changed="_adjustHeight"></uvalib-alerts>
+      </div>
+    </app-header>
+    <iron-meta key="uvalib-header-height" value="{{_height}}"></iron-meta>
+  </template>
+
+  <script>
+
+    /**
+     * `uvalib-header`
+     * Header element for the UVA Library web apps
+     *
+     * ### Styling
+     *
+     * `<uvalib-header>` provides the following custom properties and mixins for styling:
+     *
+     * Custom property | Description | Default
+     * ----------------|-------------|----------
+     * `--uvalib-header-height-lg` | The elements height when `largeScreen` is true | `253px`
+     * `--uvalib-header-height-md` | The elements height when `mediumScreen` is true | `156px`
+     * `--uvalib-header-height-sm` | The elements height when `smallScreen` is true | `128px`
+     * `--uvalib-header-background-color` | Background color of the header element | '--color-primary-color'
+     * `--uvalib-header-nav-background-color` | Background color of the header nav section (for large screens) | `--color-secondary-blue`
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class UvalibHeader extends UvalibUiElement {
+      static get is() { return 'uvalib-header'; }
+      static get properties() {
+        return Object.assign(super.properties,
+            {
+              /** Set this if you want to overwrite the default (just take the default unless used on the Library App) **/
+              libraryHomeLink: {
+                type: String,
+                value: "https://www.library.virginia.edu"
+              },
+              /** Set this to false untill the lazy loaded components finish loading **/
+              lazyLoadComplete: {
+                type:Boolean,
+                value:true,
+                observer:"_delayedAdjustHeight"
+              },
+              /** Set this to true when you want the links to be relative (when used in library.virginia.edu) **/
+              relativeLinks: {
+                type: Boolean,
+                value: false
+              },
+              /** Tracks the header components height **/
+              _height: {
+                type: String,
+                notify: true
+              },
+              _domain: {
+                type: String,
+                computed: "_makeLinkDomain(relativeLinks)"
+              },
+              tabindex: {
+                type: Number,
+                value: -1
+              }
+            });
+      }
+      //Concat the this elements template with the parents
+      static get template() {
+        var parentTemplate = UvalibUiElement.template.cloneNode(true);
+        var childTemplate = Polymer.DomModule.import('uvalib-header', 'template');
+        parentTemplate.content.insertBefore(childTemplate.content,null);
+        return parentTemplate;
+      }
+      _makeLinkDomain(relLinks) {
+        return (relLinks)? "":"https://www.library.virginia.edu";
+      }
+      connectedCallback() {
+        super.connectedCallback();
+        this._adjustHeight();
+      }
+      _delayedAdjustHeight(){
+        setTimeout(function(){ this._adjustHeight(); }.bind(this), 500);
+      }
+      _adjustHeight() {
+        this._height=this.style.height=this.$.header.clientHeight+"px";
+      }
+      _openMenu(){
+        this.shadowRoot.querySelector('#menuDialog').open();
+      }
+      viewAllAlerts(e){
+        e.preventDefault();
+        this.$.alerts.unseeAll();
+      }
+      changeFocusToSearch() {
+        if (this.largeScreen) {
+          this.$.search.changeFocusToCatalogAdvanced();
+        } else {
+          this.$.menuDialogSearch.changeFocusToCatalogAdvanced();
+        }
+      }
+      changeFocusToNavigation() {
+        if (this.largeScreen) {
+          this.$.menuLargeScreenFirstItem.focus();
+        } else {
+          this.$.menuNotLargeScreenFirstItem.focus();
+        }
+      }
+      changeFocusToFirstItem() {
+        this.$.logo.querySelector('a').focus();
+      }
+    }
+
+    window.customElements.define(UvalibHeader.is, UvalibHeader);
+  </script>
+</dom-module>
