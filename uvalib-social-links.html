@@ -98,6 +98,9 @@ Example:
         width:100%;
         color: var(--specialcolor,currentcolor);
       }
+      paper-icon-button:focus {
+        @apply --link-focus;
+      }
     </style>
 
     <a href$="{{href}}" tabindex="-1">
@@ -157,6 +160,9 @@ Example:
         height:100%;
         width:100%;
         color: var(--specialcolor,currentcolor);
+      }
+      paper-icon-button:focus {
+        @apply --link-focus;
       }
     </style>
 
@@ -218,6 +224,9 @@ Example:
         width:100%;
         color: var(--specialcolor,currentcolor);
       }
+      paper-icon-button:focus {
+        @apply --link-focus;
+      }
     </style>
 
     <a href$="{{href}}" tabindex="-1">
@@ -277,6 +286,9 @@ Example:
         height:100%;
         width:100%;
         color: var(--specialcolor,currentcolor);
+      }
+      paper-icon-button:focus {
+        @apply --link-focus;
       }
     </style>
     <template is="dom-if" if="[[_isTwitter(alt)]]" restamp>
